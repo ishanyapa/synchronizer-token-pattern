@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSRF Test</title>
+
+    <!--Bootstrap CSS Framework-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--<script src="index.js"></script>-->
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <!-- Start form -->
+            <form>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <button type="submit" class="btn btn-primary" onclick="login()">Submit</button>
+                </div>
+            </form>
+            <!-- End form -->
+        </div>
+    </div>
+</div>
+
+<script>
+    function login(email, password) {
+
+        console.log(email + " " + password)
+        console.log("function called");
+        if (email=="ishanyapa@gmail.com" && password=="123") {
+            return true;
+        }
+
+        return false;
+    }
+</script>
+
+</body>
+</html>
