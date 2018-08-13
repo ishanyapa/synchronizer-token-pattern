@@ -29,7 +29,7 @@ public class AuthController {
             HttpSession httpSession = request.getSession(true);
             httpSession.setAttribute("username", "ishan");
             sessionService.addSession(request.getSession(false).getId(), "123");
-            response.sendRedirect("/control.html");
+            response.sendRedirect("/home.html");
             return;
         }
 

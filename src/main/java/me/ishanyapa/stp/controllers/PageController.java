@@ -30,16 +30,6 @@ public class PageController {
         return "redirect:/home.html";
     }
 
-    @GetMapping(value="/control.html")
-    public String getControl(HttpServletRequest request, HttpServletResponse response) {
-
-        if(request.getSession(false).getId() != null) {
-            return "redirect:/home.html";
-        }
-
-        return "redirect:/index.html";
-    }
-
     @GetMapping(value="/home.html")
     public String getHome(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

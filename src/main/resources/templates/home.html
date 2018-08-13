@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <!-- Start form -->
-            <form action="/api/content" method="post">
+            <form action="/api/content" method="post" id="submitForm">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
@@ -29,8 +29,7 @@
                     <label for="lastName">Last Name</label>
                     <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Last Name">
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="_csrf" id="_csrf" hidden>
+                <div class="form-group" id="hiddenDiv">
                 </div>
                 <div class="form-check">
                     <button type="submit" class="btn btn-primary">Submit</button>
