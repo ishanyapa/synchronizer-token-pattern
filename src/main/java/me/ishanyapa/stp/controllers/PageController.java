@@ -1,11 +1,8 @@
 package me.ishanyapa.stp.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.util.WebUtils;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -14,10 +11,20 @@ import java.io.IOException;
 public class PageController {
 
     @GetMapping(value="/")
-    public String getIndex(HttpServletRequest request, HttpServletResponse response) {
+    public String getRoot(HttpServletRequest request, HttpServletResponse response) {
 
         if(request.getSession(false)== null) {
             return "redirect:/index.html";
+        }
+
+        return "redirect:/home.html";
+    }
+
+    @GetMapping(value="/index.html")
+    public String getIndex(HttpServletRequest request, HttpServletResponse response) {
+
+        if(request.getSession(false)== null) {
+            return "/index.html";
         }
 
         return "redirect:/home.html";
@@ -34,11 +41,13 @@ public class PageController {
     }
 
     @GetMapping(value="/home.html")
-    public void getHome(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getHome(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         if(request.getSession(false) == null) {
-            response.sendRedirect("/index.html");
+            return "redirect:/index.html";
         }
+
+        return "/home.html";
     }
 
 }
