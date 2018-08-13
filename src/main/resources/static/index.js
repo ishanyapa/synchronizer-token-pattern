@@ -1,10 +1,2 @@
-function login(email, password) {
 
-    console.log(email + " " + password)
-    console.log("function called");
-    if (email=="ishanyapa@gmail.com" && password=="123") {
-        return true;
-    }
-
-    return false;
-}
+document.cookie = "name=value; expires=date; path=path;domain=domain; secure";

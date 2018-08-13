@@ -12,17 +12,14 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!--<script src="index.js"></script>-->
 </head>
 <body>
-
 
 <div class="container">
     <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <!-- Start form -->
-            <form>
+            <form action="/api/login" method="post">
                 <div class="form-group">
                     <label for="email">Email address</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -32,26 +29,12 @@
                     <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                 </div>
                 <div class="form-check">
-                    <button type="submit" class="btn btn-primary" onclick="login()">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
             <!-- End form -->
         </div>
     </div>
 </div>
-
-<script>
-    function login(email, password) {
-
-        console.log(email + " " + password)
-        console.log("function called");
-        if (email=="ishanyapa@gmail.com" && password=="123") {
-            return true;
-        }
-
-        return false;
-    }
-</script>
-
 </body>
 </html>
