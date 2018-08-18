@@ -4,10 +4,7 @@ import me.ishanyapa.stp.services.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +13,7 @@ import java.io.IOException;
 
 @Controller
 @RequestMapping("/api")
-public class AuthController {
+public class AuthController extends BaseController {
 
     @Autowired
     SessionService sessionService;
@@ -42,4 +39,7 @@ public class AuthController {
         request.getSession(false).invalidate();
         response.sendRedirect("/");
     }
+
 }
+
+

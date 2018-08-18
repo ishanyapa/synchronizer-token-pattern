@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @RequestMapping("/api")
 @Controller
-public class ContentController {
+public class ContentController extends BaseController {
 
     @Autowired
     SessionService sessionService;

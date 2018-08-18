@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/api")
-public class SecurityController {
+public class SecurityController extends BaseController {
 
     @Autowired
     TokenService tokenService;
