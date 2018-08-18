@@ -5,45 +5,28 @@
     <title>Home</title>
 
     <!--Bootstrap CSS Framework-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--Custom CSS Style-->
+    <link rel="stylesheet" href="styles.css">
 
     <script src="index.js"></script>
 </head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <!-- Start form -->
-            <form action="/api/content" method="post" id="submitForm">
-                <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Last Name">
-                </div>
-                <div class="form-group" id="hiddenDiv">
-                </div>
-                <div class="form-check">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
-
-            <form action="/api/logout" method="post">
-                <div class="form-check">
-                    <button type="submit" class="btn btn-success">Logout</button>
-                </div>
-            </form>
-            <!-- End form -->
-        </div>
+<body class="text-center">
+<form method="post" id="form" name="form" class="form-signin">
+    <div class="form-group">
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
     </div>
-</div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Last Name">
+    </div>
+    <div class="form-group" id="hiddenDiv">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block" onclick="javascript: form.action='/api/content';">Submit</button>
+    <button type="submit" class="btn btn-warning btn-block" onclick="javascript: form.action='/api/logout';">Logout</button>
+</form>
 </body>
 </html>
