@@ -31,4 +31,11 @@ public class SessionService {
 
         return "NULL";
     }
+
+    public void removeCsrf (String sessionId) {
+
+        if (sessionStorage.get(sessionId) != null) {
+            sessionStorage.remove(sessionId);
+        }
+    }
 }

@@ -21,18 +21,25 @@ public class AuthController {
     @Autowired
     SessionService sessionService;
 
-    @PostMapping(value= "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PostMapping(value = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public void login(@RequestParam("email") String email, @RequestParam("password") String password, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         if (String.valueOf(email).equals("ishanyapa@gmail.com") && String.valueOf(password).equals("123")) {
 
             HttpSession httpSession = request.getSession(true);
             httpSession.setAttribute("username", "ishan");
-            sessionService.addSession(request.getSession(false).getId(), "123");
             response.sendRedirect("/home.html");
             return;
         }
 
         response.sendRedirect("/index.html");
+    }
+
+    @PostMapping(value = "/logout", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public void logout(HttpServletRequest request,  HttpServletResponse response) throws IOException {
+
+        sessionService.removeCsrf(request.getSession(false).getId());
+        request.getSession(false).invalidate();
+        response.sendRedirect("/");
     }
 }
