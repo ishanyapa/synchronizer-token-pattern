@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.annotation.SessionScope;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,10 +20,12 @@ public class ContentController extends BaseController {
     @Autowired
     SessionService sessionService;
 
-    @PostMapping(value="/content", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public String changeContent(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, @RequestParam("_csrf") String _csrf, HttpServletRequest request, HttpServletResponse response) {
+    @PostMapping(value="/content")
+    public String changeContent(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, @RequestParam("_csrf") String _csrf, HttpServletRequest request, HttpServletResponse response, RedirectAttributes redirectAttributes) {
 
         if (sessionService.getCsrf(request.getSession(false).getId()).equals(_csrf)) {
+            redirectAttributes.addFlashAttribute("message", "Success");
+            redirectAttributes.addFlashAttribute("alertClass", "alert-success");
             return "redirect:/home.html";
         }
 
