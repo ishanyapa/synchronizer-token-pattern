@@ -24,8 +24,6 @@ public class ContentController extends BaseController {
     public String changeContent(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, @RequestParam("_csrf") String _csrf, HttpServletRequest request, HttpServletResponse response, RedirectAttributes redirectAttributes) {
 
         if (sessionService.getCsrf(request.getSession(false).getId()).equals(_csrf)) {
-            redirectAttributes.addFlashAttribute("message", "Success");
-            redirectAttributes.addFlashAttribute("alertClass", "alert-success");
             return "redirect:/home.html";
         }
 
