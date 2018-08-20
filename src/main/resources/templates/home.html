@@ -21,6 +21,7 @@
 </head>
 <body class="text-center">
 <form method="post" id="form" name="form" class="form-signin" target="_self">
+    <h1 class="h3 mb-3 font-weight-normal">Check CSRF token</h1>
     <div class="form-group">
         <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
     </div>
@@ -63,6 +64,7 @@
             success: function() {
                 document.getElementById("form").appendChild(alert);
                 document.getElementById("alert").hidden = false;
+                document.getElementById("form").reset();
             },
             error: function () {
                 document.getElementById("form").appendChild(alertErr);
