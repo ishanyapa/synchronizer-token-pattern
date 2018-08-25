@@ -1,4 +1,4 @@
-package me.ishanyapa.stp.controllers;
+package me.ishanyapa.stp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
