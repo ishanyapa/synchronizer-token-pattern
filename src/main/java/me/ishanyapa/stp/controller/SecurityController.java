@@ -1,14 +1,13 @@
-package me.ishanyapa.stp.controllers;
+package me.ishanyapa.stp.controller;
 
-import me.ishanyapa.stp.services.SessionService;
-import me.ishanyapa.stp.services.TokenService;
+import me.ishanyapa.stp.service.SessionService;
+import me.ishanyapa.stp.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController

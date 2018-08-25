@@ -1,8 +1,7 @@
-package me.ishanyapa.stp.controllers;
+package me.ishanyapa.stp.controller;
 
-import me.ishanyapa.stp.services.SessionService;
+import me.ishanyapa.stp.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

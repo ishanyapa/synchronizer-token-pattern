@@ -1,4 +1,4 @@
-package me.ishanyapa.stp.services;
+package me.ishanyapa.stp.service;
 
 import org.springframework.stereotype.Service;
 
