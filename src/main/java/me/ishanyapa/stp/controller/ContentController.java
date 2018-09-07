@@ -27,7 +27,6 @@ public class ContentController extends BaseController {
             response.sendRedirect("/home.html");
             return;
         }
-
         response.sendError(400);
     }
 }
