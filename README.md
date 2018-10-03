@@ -3,8 +3,9 @@
 Simple implementation of Synchronizer Token Pattern to prevent CSRF using Java Spring Boot 
 
 ## Steps to run
-1. Build the project using
+1. Clone or download the repo using `master` branch
+2. Build the project using
   `mvn clean install`
-2. Run using `mvn spring-boot:run`
-3. The web application is accessible via localhost:3000
-4. Use username and password as 'root' to login to the application
+3. Run using `mvn spring-boot:run`
+4. The web application is accessible via localhost:3000
+5. Use username and password as 'root' to login to the application
